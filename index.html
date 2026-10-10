@@ -152,8 +152,8 @@ footer{padding:36px 0 48px;text-align:center;color:var(--muted);border-top:1px s
 
 <script>
 const cols=["#3f8f55","#f6b93b","#ef6f61","#4fa8d8","#b05ac4"];
-const names=["Nguyễn Văn An","Trần Thu Hà","Lê Minh Khang","Phạm Ngọc Linh","Hoàng Gia Bảo","Võ Thảo Nhi","Đặng Quốc Huy","Bùi Mai Anh","Ngô Đức Tín","Đỗ Khánh Vy","Lý Hải Nam","Phan Bích Trâm"];
-const roles=["Lớp trưởng","Lớp phó học tập","Bí thư","Thủ quỹ","Tổ trưởng","Văn nghệ","Thể thao","Học bá","Nhiếp ảnh","Vẽ đẹp","Gamer","Người kể chuyện"];
+const names=["Lê Minh Anh","Trần Thị Ý Lan","Lê Thiện Phú","Hà Quỳnh Anh","Bùi Kim Ngân","Lê Tú Anh","Lê Mai Huyền Ly","Bùi Mai Anh","Ngô Đức Tín","Đỗ Khánh Vy","Lý Hải Nam","Phan Bích Trâm"];
+const roles=["Lớp trưởng","Lớp phó học tập","Bí thư","Thủ quỹ","Tổ trưởng 1","Tổ trưởng 2","Tổ trưởng 3","Tổ trưởng 4","Nhiếp ảnh","Vẽ đẹp","Gamer","Người kể chuyện"];
 document.getElementById("members").innerHTML=names.map((n,i)=>{
   const ini=n.split(" ").pop()[0];
   return `<div class="m"><div class="av" style="background:${cols[i%5]};${cols[i%5]==="#f6b93b"?"color:#3a2c00":""}">${ini}</div><strong>${n}</strong><span>${roles[i]}</span></div>`;
