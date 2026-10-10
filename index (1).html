@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>12A3 · THPT Hoàng Hoa Thám</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Mali:wght@500;700&family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f9d3d3; --bg2:#fdeaea; --ink:#6b3b35; --muted:#8a5f58; --card:#fffafa; --line:#6b3b35;
+  --pink:#f4a9b3; --cream:#fbeec5; --blue:#6f9db8; --mint:#3cc3a0; --red:#e5575a; --sun:#f6c453;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#3a2428;--bg2:#47292f;--ink:#fbe3e0;--muted:#d8aaa6;--card:#52323a;--line:#f3b8b8}
+}
+:root[data-theme="dark"]{--bg:#3a2428;--bg2:#47292f;--ink:#fbe3e0;--muted:#d8aaa6;--card:#52323a;--line:#f3b8b8}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;color:var(--ink);font-family:"Be Vietnam Pro",system-ui,sans-serif;line-height:1.65;overflow-x:hidden;
+  background:var(--bg) radial-gradient(circle,rgba(255,255,255,.55) 2.5px,transparent 3px) 0 0/26px 26px}
+h1,h2,h3{font-family:"Mali","Be Vietnam Pro",cursive;line-height:1.15;margin:0}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.box{background:var(--card);border:3px solid var(--line);border-radius:22px;box-shadow:4px 4px 0 var(--line)}
+
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;padding:10px 0}
+nav .wrap{display:flex;gap:14px;align-items:center;justify-content:space-between}
+nav .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;padding:8px 14px 8px 18px;border-radius:999px}
+nav b{font:700 1.3rem "Mali";color:var(--red)}
+nav div{display:flex;gap:6px;overflow-x:auto}
+nav a{text-decoration:none;font-size:.9rem;font-weight:600;padding:6px 12px;border-radius:999px;white-space:nowrap}
+nav a:hover,nav a:focus-visible{background:var(--pink);color:#4a2420}
+
+.hero{padding:34px 0 20px;text-align:center}
+.hero small{font:700 1rem "Mali";letter-spacing:.12em;color:var(--mint)}
+.hero h1{font-size:clamp(4.2rem,17vw,9rem);font-weight:700;color:var(--ink);letter-spacing:.02em;text-shadow:4px 4px 0 var(--card),6px 6px 0 var(--pink)}
+.sub{font:700 clamp(1rem,3.4vw,1.4rem) "Mali";letter-spacing:.3em;margin:0 0 8px;color:var(--muted)}
+.mascots{display:flex;justify-content:center;align-items:flex-end;gap:clamp(0px,2vw,20px);margin:16px auto 8px;max-width:640px}
+.mascots svg{width:30%;height:auto}
+.mascots svg:nth-child(2){width:34%;transform:translateY(-8px)}
+.mascots svg{animation:hop 2.4s ease-in-out infinite}
+.mascots svg:nth-child(2){animation-delay:.3s}.mascots svg:nth-child(3){animation-delay:.6s}
+@keyframes hop{50%{margin-bottom:10px}}
+@media (prefers-reduced-motion:reduce){.mascots svg{animation:none}}
+.pill{display:inline-block;background:#fff;color:#4a2420;border:3px solid var(--line);border-radius:999px;padding:8px 22px;font:700 clamp(.9rem,3vw,1.15rem) "Mali";box-shadow:3px 3px 0 var(--line)}
+.pill b{color:var(--mint);font-size:1.3em}
+.btns{margin-top:22px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;background:var(--red);color:#fff;border:3px solid var(--line);border-radius:999px;padding:10px 24px;font:700 1rem "Mali";text-decoration:none;cursor:pointer;box-shadow:3px 3px 0 var(--line);transition:transform .15s}
+.btn:hover{transform:translate(-1px,-1px)}
+.btn.alt{background:var(--cream);color:#4a2420}
+
+section{padding:56px 0}
+section.alt{background:var(--bg2);border-block:3px dashed var(--line)}
+section h2{font-size:clamp(1.9rem,5vw,2.7rem);margin-bottom:6px}
+section h2::after{content:" ♡";color:var(--red)}
+.lead{color:var(--muted);max-width:56ch;margin:0 0 26px}
+.about{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:start}
+.about p.lead{max-width:none;font-size:1.05rem;padding:20px 22px}
+.facts{display:grid;gap:12px}
+.fact{padding:12px 18px}
+.fact:nth-child(1){background:var(--cream)}.fact:nth-child(2){background:#d9f2ea}.fact:nth-child(3){background:#dbe8f1}.fact:nth-child(4){background:#fde0e0}
+.fact{color:#4a2420}.fact small{color:#7a504a}
+.fact b{font:700 1.2rem "Mali";display:block}
+@media (max-width:760px){.about{grid-template-columns:1fr}}
+
+.members{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px}
+.m{padding:14px 10px 16px;text-align:center}
+.m svg{width:80px;height:80px;display:block;margin:0 auto 6px}
+.m strong{display:block;font-size:.95rem}.m span{display:inline-block;margin-top:4px;font-size:.78rem;font-weight:600;background:var(--cream);color:#4a2420;border-radius:999px;padding:2px 12px;border:2px solid var(--line)}
+
+.tl{border-left:4px dotted var(--line);margin-left:12px;padding-left:28px;display:grid;gap:20px}
+.ev{position:relative;padding:14px 20px}
+.ev::before{content:"";position:absolute;left:-43px;top:18px;width:20px;height:20px;border-radius:50%;background:var(--c);border:3px solid var(--line)}
+.ev h3{font-size:1.2rem}.ev time{font-size:.82rem;color:var(--muted);font-weight:600}.ev p{margin:4px 0 0}
+
+.count{background:var(--blue);color:#fff;padding:32px 24px;text-align:center}
+.count h2{color:#fff}.count h2::after{content:""}
+.nums{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.nums div{background:#fff;color:#4a2420;border:3px solid var(--line);border-radius:20px;min-width:92px;padding:10px;font-weight:600}
+.nums b{font:700 2.3rem "Mali";display:block;line-height:1.1;color:var(--red)}
+.count small{display:block;margin-top:14px;opacity:.95}
+
+form{display:grid;gap:10px;max-width:520px;margin-bottom:26px}
+input,textarea{font:inherit;color:var(--ink);background:var(--card);border:3px solid var(--line);border-radius:16px;padding:11px 14px;width:100%}
+.wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.note{padding:16px 18px;border:3px solid #6b3b35;border-radius:18px;color:#4a2420;font-size:.95rem;box-shadow:3px 3px 0 #6b3b35;overflow-wrap:anywhere}
+.note b{display:block;font:700 1rem "Mali";margin-top:8px}
+footer{padding:30px 0 44px;text-align:center;color:var(--muted);font-size:.92rem}
+footer b{font-family:"Mali";font-size:1.15rem;color:var(--ink);display:block;letter-spacing:.2em}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><div class="bar box"><b>12A3</b><div><a href="#gioi-thieu">Giới thiệu</a><a href="#thanh-vien">Thành viên</a><a href="#ky-niem">Kỷ niệm</a><a href="#loi-nhan">Lời nhắn</a></div></div></div></nav>
+
+<header class="hero"><div class="wrap">
+  <small>THPT HOÀNG HOA THÁM</small>
+  <h1>12A3</h1>
+  <p class="sub">Năm cuối cấp</p>
+  <div class="mascots" id="mascots"></div>
+  <span class="pill">Ở bên nhau thật gần, thật vui · <b>45</b> bạn!</span>
+  <div class="btns"><a class="btn" href="#thanh-vien">Gặp cả lớp</a><a class="btn alt" href="#loi-nhan">Để lại lời nhắn</a></div>
+</div></header>
+
+<main>
+<section id="gioi-thieu"><div class="wrap">
+  <h2>Về lớp mình</h2>
+  <div class="about">
+    <p class="lead box">Chúng mình là những người bạn chung một lớp học, một sân trường và một tán phượng. Có đứa giỏi Toán, có đứa vẽ đẹp, có đứa lúc nào cũng mang theo đồ ăn vặt. Cùng nhau, 12A3 đi qua kỳ thi, hội trại và những buổi chiều trống tiết, rồi sẽ cùng nhau bước ra khỏi cổng trường.</p>
+    <div class="facts">
+      <div class="fact box"><b>Năm học 2026 – 2027</b><small>Năm cuối cấp</small></div>
+      <div class="fact box"><b>Thầy/cô chủ nhiệm</b><small>Cô Như Quỳnh</small></div>
+      <div class="fact box"><b>Sĩ số</b><small>45</small></div>
+      <div class="fact box"><b>Khẩu hiệu</b><small>Cùng nhau lớn lên như cây</small></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="thanh-vien" class="alt"><div class="wrap">
+  <h2>Thành viên</h2>
+  <p class="lead">Dưới đây là ban cán sự lớp 12A3.</p>
+  <div class="members" id="members"></div>
+</div></section>
+
+<section id="ky-niem"><div class="wrap">
+  <h2>Hành trình năm cuối</h2>
+  <p class="lead">Những mốc nhỏ trên đường đi của lớp.</p>
+  <div class="tl">
+    <div class="ev box" style="--c:var(--mint)"><time>Tháng 9</time><h3>Khai giảng</h3><p>Gặp lại thầy cô, bạn bè và chỗ ngồi cũ dưới gốc cây.</p></div>
+    <div class="ev box" style="--c:var(--red)"><time>Tháng 11</time><h3>Ngày Nhà giáo Việt Nam 20/11</h3><p>Văn nghệ, hoa và lời cảm ơn gửi tới thầy cô.</p></div>
+    <div class="ev box" style="--c:var(--blue)"><time>Tháng 3</time><h3>Hội trại 26/3</h3><p>Dựng lều, thi trò chơi, đốt lửa trại cùng cả khối.</p></div>
+    <div class="ev box" style="--c:var(--sun)"><time>Tháng 5</time><h3>Lễ tri ân và trưởng thành</h3><p>Buổi chụp ảnh kỷ yếu và những cái ôm thật chặt.</p></div>
+    <div class="ev box" style="--c:var(--pink)"><time>Tháng 6</time><h3>Kỳ thi tốt nghiệp THPT</h3><p>Chặng cuối của 12 năm đi học. Cố lên cả lớp.</p></div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="count box">
+    <h2>Còn bao lâu nữa đến kỳ thi?</h2>
+    <div class="nums"><div><b id="d">0</b>ngày</div><div><b id="h">0</b>giờ</div><div><b id="mi">0</b>phút</div></div>
+    <small>Đếm ngược tới ngày 26/06/2027 (ngày ước tính, có thể sửa theo lịch thi chính thức).</small>
+  </div>
+</div></section>
+
+<section id="loi-nhan" class="alt"><div class="wrap">
+  <h2>Bức tường lời nhắn</h2>
+  <p class="lead">Viết vài dòng cho lớp. Lời nhắn chỉ lưu trên máy của bạn.</p>
+  <form id="f">
+    <input id="n" placeholder="Tên của bạn" maxlength="30" required>
+    <textarea id="t" rows="3" placeholder="Bạn muốn nhắn gì với 12A3?" maxlength="140" required></textarea>
+    <button class="btn" type="submit" style="justify-self:start">Dán lên tường</button>
+  </form>
+  <div class="wall" id="wall"></div>
+</div></section>
+</main>
+
+<footer><div class="wrap"><b>12A3</b>Trường THPT Hoàng Hoa Thám · Năm học 2026 – 2027</div></footer>
+
+<script>
+// Nhân vật gốc: tai tròn, tai dài, mầm lá
+function mascot(type,fill){
+  const o='stroke="#6b3b35" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"';
+  let top="";
+  if(type===0) top=`<circle cx="28" cy="36" r="14" fill="${fill}" ${o}/><circle cx="92" cy="36" r="14" fill="${fill}" ${o}/>`;
+  if(type===1) top=`<ellipse cx="42" cy="24" rx="10" ry="26" fill="${fill}" ${o}/><ellipse cx="78" cy="24" rx="10" ry="26" fill="${fill}" ${o}/><ellipse cx="42" cy="26" rx="4" ry="15" fill="#f4a9b3"/><ellipse cx="78" cy="26" rx="4" ry="15" fill="#f4a9b3"/>`;
+  if(type===2) top=`<path d="M60 40 V22" fill="none" ${o}/><path d="M60 26 C44 28 36 16 38 8 C52 8 60 16 60 26Z" fill="#3cc3a0" ${o}/><path d="M60 26 C76 28 84 16 82 8 C68 8 60 16 60 26Z" fill="#7ddcc0" ${o}/>`;
+  return `<svg viewBox="0 0 120 120" aria-hidden="true">${top}<ellipse cx="60" cy="74" rx="46" ry="38" fill="${fill}" ${o}/><circle cx="43" cy="68" r="5.5" fill="#6b3b35"/><circle cx="77" cy="68" r="5.5" fill="#6b3b35"/><circle cx="45" cy="66" r="1.8" fill="#fff"/><circle cx="79" cy="66" r="1.8" fill="#fff"/><ellipse cx="29" cy="80" rx="8" ry="5.5" fill="#f4a9b3"/><ellipse cx="91" cy="80" rx="8" ry="5.5" fill="#f4a9b3"/><path d="M53 79 Q60 88 67 79" fill="#f4a9b3" ${o} stroke-width="3"/></svg>`;
+}
+const fills=["#ffffff","#fbeec5","#d9f2ea","#dbe8f1","#fde0e0"];
+document.getElementById("mascots").innerHTML=mascot(0,"#ffffff")+mascot(2,"#fbeec5")+mascot(1,"#fbeec5").replace(/#fbeec5/,"#ffffff");
+
+const names=["Lê Minh Anh","Trần Thị Ý Lan","Nguyễn Thiện Phú","Hà Quỳnh Anh","Bùi Kim Ngân","Lê Tú Anh","Lê Mai Huyền Ly"];
+const roles=["Lớp trưởng","Lớp phó học tập","Bí thư","Tổ trưởng 1","Tổ trưởng 2","Tổ trưởng 3","Tổ trưởng 4"];
+document.getElementById("members").innerHTML=names.map((n,i)=>
+  `<div class="m box">${mascot(i%3,fills[i%5])}<strong>${n}</strong><span>${roles[i]}</span></div>`).join("");
+
+const target=new Date("2027-06-26T07:30:00+07:00");
+function tick(){
+  const s=Math.max(0,target-Date.now())/1000;
+  d.textContent=Math.floor(s/86400);h.textContent=Math.floor(s%86400/3600);mi.textContent=Math.floor(s%3600/60);
+}
+tick();setInterval(tick,30000);
+
+const bg=["#fde7a0","#cdeccf","#ffd2cb","#cfe8f7","#f3d6f5"];
+let notes=[{n:"Lớp 12A3",t:"Chào mừng đến với trang web của lớp mình!"}];
+try{const s=localStorage.getItem("12a3-notes");if(s)notes=JSON.parse(s)}catch(e){}
+function render(){
+  wall.innerHTML=notes.map((x,i)=>`<div class="note" style="background:${bg[i%5]};transform:rotate(${(i%3-1)*1.2}deg)"></div>`).join("");
+  [...wall.children].forEach((el,i)=>{el.textContent=notes[i].t;const b=document.createElement("b");b.textContent="— "+notes[i].n;el.appendChild(b)});
+}
+render();
+f.addEventListener("submit",e=>{
+  e.preventDefault();
+  notes.unshift({n:n.value.trim(),t:t.value.trim()});notes=notes.slice(0,40);
+  try{localStorage.setItem("12a3-notes",JSON.stringify(notes))}catch(e){}
+  f.reset();render();
+});
+</script>
+</body>
+</html>
