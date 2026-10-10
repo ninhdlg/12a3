@@ -103,8 +103,8 @@ footer{padding:36px 0 48px;text-align:center;color:var(--muted);border-top:1px s
     <p class="lead" style="max-width:none;font-size:1.05rem">Chúng mình là những người bạn chung một lớp học, một sân trường và một tán phượng. Có đứa giỏi Toán, có đứa vẽ đẹp, có đứa lúc nào cũng mang theo đồ ăn vặt. Cùng nhau, 12A3 đi qua kỳ thi, hội trại và những buổi chiều trống tiết, rồi sẽ cùng nhau bước ra khỏi cổng trường.</p>
     <div class="facts">
       <div class="fact"><b>Năm học 2026 – 2027</b><small>Năm cuối cấp</small></div>
-      <div class="fact"><b>Thầy/cô chủ nhiệm</b><small>[Điền tên GVCN]</small></div>
-      <div class="fact"><b>Sĩ số</b><small>[Điền số học sinh]</small></div>
+      <div class="fact"><b>Thầy/cô chủ nhiệm</b><small>Cô Như Quỳnh</small></div>
+      <div class="fact"><b>Sĩ số</b><small>45</small></div>
       <div class="fact"><b>Khẩu hiệu</b><small>Cùng nhau lớn lên như cây</small></div>
     </div>
   </div>
@@ -112,13 +112,13 @@ footer{padding:36px 0 48px;text-align:center;color:var(--muted);border-top:1px s
 
 <section id="thanh-vien" style="background:var(--bg2)"><div class="wrap">
   <h2>Thành viên</h2>
-  <p class="lead">Tên bên dưới là mẫu, bạn thay bằng tên thật của lớp nhé.</p>
+  <p class="lead">Dưới đây là ban cán sự lớp 12a3.</p>
   <div class="members" id="members"></div>
 </div></section>
 
 <section id="ky-niem"><div class="wrap">
   <h2>Hành trình năm cuối</h2>
-  <p class="lead">Những mốc nhỏ trên đường đi của lớp (sửa lại theo lịch thật của trường).</p>
+  <p class="lead">Những mốc nhỏ trên đường đi của lớp.</p>
   <div class="tl">
     <div class="ev" style="--c:var(--leaf)"><time>Tháng 9</time><h3>Khai giảng</h3><p>Gặp lại thầy cô, bạn bè và chỗ ngồi cũ dưới gốc cây.</p></div>
     <div class="ev" style="--c:var(--coral)"><time>Tháng 11</time><h3>Ngày Nhà giáo Việt Nam 20/11</h3><p>Văn nghệ, hoa và lời cảm ơn gửi tới thầy cô.</p></div>
@@ -152,8 +152,8 @@ footer{padding:36px 0 48px;text-align:center;color:var(--muted);border-top:1px s
 
 <script>
 const cols=["#3f8f55","#f6b93b","#ef6f61","#4fa8d8","#b05ac4"];
-const names=["Lê Minh Anh","Trần Thị Ý Lan","Lê Thiện Phú","Hà Quỳnh Anh","Bùi Kim Ngân","Lê Tú Anh","Lê Mai Huyền Ly","Bùi Mai Anh","Ngô Đức Tín","Đỗ Khánh Vy","Lý Hải Nam","Phan Bích Trâm"];
-const roles=["Lớp trưởng","Lớp phó học tập","Bí thư","Thủ quỹ","Tổ trưởng 1","Tổ trưởng 2","Tổ trưởng 3","Tổ trưởng 4","Nhiếp ảnh","Vẽ đẹp","Gamer","Người kể chuyện"];
+const names=["Lê Minh Anh","Trần Thị Ý Lan","Nguyễn Thiện Phú","Hà Quỳnh Anh","Bùi Kim Ngân","Lê Tú Anh","Lê Mai Huyền Ly"];
+const roles=["Lớp trưởng","Lớp phó học tập","Bí thư","Tổ trưởng 1","Tổ trưởng 2","Tổ trưởng 3","Tổ trưởng 4"];
 document.getElementById("members").innerHTML=names.map((n,i)=>{
   const ini=n.split(" ").pop()[0];
   return `<div class="m"><div class="av" style="background:${cols[i%5]};${cols[i%5]==="#f6b93b"?"color:#3a2c00":""}">${ini}</div><strong>${n}</strong><span>${roles[i]}</span></div>`;
